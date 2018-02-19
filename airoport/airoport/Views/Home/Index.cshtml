@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AirPort Table</title>
+</head>
+<body>
+    <div>
+        <h3>Flights Table</h3>
+        <table>
+            <tr>
+               
+                <td><p>Flight</p></td>
+                <td><p>FlightNum</p></td>
+                <td><p>Airline</p></td>
+                <td><p>CityArriv</p></td>
+                <td><p>CityDep</p></td>
+                <td><p>Status</p></td>
+                <td><p>Terminal</p></td>
+                <td><p>Gate</p></td>
+
+                <td></td>
+            </tr>
+            @foreach (var b in ViewBag.Flights)
+        {
+            <tr>
+                <td><p>@b.Id</p></td>
+                <td><p>@b.FlightNum</p></td>
+                <td><p>@b.Airline</p></td>
+                <td><p>@b.CityArriv</p></td>
+                <td><p>@b.CityDep</p></td>
+                <td><p>@b.Status</p></td>
+                <td><p>@b.Terminal</p></td>
+                <td><p>@b.Gate</p></td>
+
+            </tr>
+    }
+        </table>
+        <td><p><a href="/Home/Addf/4">Add flight</a></p></td>
+        <td><p><a href="/Home/Delf">Delete flight</a></p></td>
+
+    </div>
+</body>
+</html>
