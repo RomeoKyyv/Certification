@@ -15,7 +15,7 @@ namespace airoport.Models
                 int tmp = 0;
                 string prt;
                 Random rndobj = new Random();
-                for (int i = 0; i < 20; i++)
+                for (int i = 0; i < 10; i++)
                 {
                     Flight flight = new Flight();
                     var year = rndobj.Next(2016, 2020);
@@ -25,7 +25,7 @@ namespace airoport.Models
                     var rndtime = new DateTime(year, month, days,
                        rndobj.Next(0, 24), rndobj.Next(0, 60), rndobj.Next(0, 60), rndobj.Next(0, 1000));
 
-                    //flight.DepTime=rndtime;
+                    flight.DepTime=rndtime;
                     //rndtime = rndtime.AddHours(rndobj.Next(0, 12));
                     //rndobj.Next(0, 60);
                     //rndtime = rndtime.AddMinutes(rndobj.Next(0, 60));

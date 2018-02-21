@@ -17,8 +17,8 @@ namespace airoport.Models
         public enum Term { A, B, C, D, E }
 
 
-        DateTime ArrivalTime { set; get; }
-       DateTime DepTime { set; get; }
+       DateTime? ArrivalTime { set; get; }
+       public DateTime? DepTime { set; get; }
         public int FlightNum { set; get; }
         public string CityArriv { set; get; }
         public string CityDep { set; get; }
