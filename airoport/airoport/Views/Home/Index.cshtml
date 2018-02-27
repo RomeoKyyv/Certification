@@ -10,12 +10,18 @@
     <title>AirPort Table</title>
 </head>
 <body>
+   
     <div>
         <h3>Flights Table</h3>
-        <table>
+        <div class="glyphicon-search">
+            <input class="clearfix" placeholder="Input search param here" type="text" >
+            <button type="submit"> Find</button>
+        </div>
+        <table style="background-color:darkviolet">
+            
             <tr>
                
-                <td><p>Flight</p></td>
+               @* <td><p>Flight</p></td>*@
                 <td><p>FlightNum</p></td>
                 <td><p>Airline</p></td>
                 <td><p>CityArriv</p></td>
@@ -30,12 +36,12 @@
             @foreach (var b in ViewBag.Flights)
         {
             <tr>
-                <td><p>@b.Id</p></td>
+               @* <td><p>@b.Id</p></td>*@
                 <td><p>@b.FlightNum</p></td>
                 <td><p>@b.Airline</p></td>
                 <td><p>@b.CityArriv</p></td>
                 <td><p>@b.CityDep</p></td>
-                <td><p>@b.DepTime</p></td>
+                <td><p>@string.Format(" {0:yy/MM/dd HH:mm}", b.DepTime)</p></td>
                 <td><p>@b.Status</p></td>
                 <td><p>@b.Terminal</p></td>
                 <td><p>@b.Gate</p></td>

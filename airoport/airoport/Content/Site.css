@@ -28,9 +28,11 @@ nav {
     }
 
 table {
-    vertical-align: middle;
-    text-align: left;
-    background-color: white;
+    /*vertical-align: middle;*/
+   vertical-align:baseline;
+    text-align:center;
+   /* background-color: white;*/
+    background-color: blueviolet;
 }
 
 .header {

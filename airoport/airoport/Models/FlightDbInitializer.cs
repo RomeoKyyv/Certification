@@ -18,7 +18,7 @@ namespace airoport.Models
                 for (int i = 0; i < 10; i++)
                 {
                     Flight flight = new Flight();
-                    var year = rndobj.Next(2016, 2020);
+                    var year = rndobj.Next(2018, 2018);
                     var month = rndobj.Next(1, 13);
                     var days = rndobj.Next(1, DateTime.DaysInMonth(year, month) + 1);
 
@@ -58,17 +58,16 @@ namespace airoport.Models
                     prt = Enum.GetName(typeof(Flight.Term), tmp);
                     flight.Terminal = prt;
 
+                    tmp = rndobj.Next(4);
+                    flight.Gate = tmp;
+
                     db.Flights.Add(flight);
 
 
                 }
             }
 
-            db.Flights.Add(new Flight { Id = 1, FlightNum = 222, Airline = "MAU" });
-            db.Flights.Add(new Flight { Id = 2, FlightNum = 223, Airline = "MAU" });
-            db.Flights.Add(new Flight { Id = 3, FlightNum = 224, Airline = "MAU" });
-            
-            base.Seed(db);
+             base.Seed(db);
         }
     }
 }

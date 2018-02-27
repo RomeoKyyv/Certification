@@ -16,8 +16,7 @@ namespace airoport.Models
         public enum State { check_in, gate_closed, arrived, departed_at, unknown, canceled, expected_at, delayed, in_flight }
         public enum Term { A, B, C, D, E }
 
-
-       DateTime? ArrivalTime { set; get; }
+        DateTime? ArrivalTime { set; get; }
        public DateTime? DepTime { set; get; }
         public int FlightNum { set; get; }
         public string CityArriv { set; get; }
@@ -25,7 +24,7 @@ namespace airoport.Models
         public string Airline { set; get; }
         public string Status { set; get; }
         public string Terminal { set; get; }
-        public string Gate { set; get; }
+        public int Gate { set; get; }
 
 
 
