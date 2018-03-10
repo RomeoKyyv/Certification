@@ -13,45 +13,49 @@
    
     <div>
         <h3>Flights Table</h3>
-        <div class="glyphicon-search">
-            <input class="clearfix" placeholder="Input search param here" type="text" >
-            <button type="submit"> Find</button>
-        </div>
-        <table style="background-color:darkviolet">
-            
-            <tr>
-               
-               @* <td><p>Flight</p></td>*@
-                <td><p>FlightNum</p></td>
-                <td><p>Airline</p></td>
-                <td><p>CityArriv</p></td>
-                <td><p>CityDep</p></td>
-                <td><p>DateTime Dep</p></td>
-                <td><p>Status</p></td>
-                <td><p>Terminal</p></td>
-                <td><p>Gate</p></td>
+        <form>
+            <div class="glyphicon-search">
+                <input class="clearfix" placeholder="Input flight num" type="number" name="numparam" >
+                <input class="clearfix" placeholder="Input airport" type="text" name="stringparam">
+                <button type="submit" formmethod="post"> Find</button>
+            </div>
+        </form>
+            <table style="background-color:darkviolet">
 
-                <td></td>
-            </tr>
-            @foreach (var b in ViewBag.Flights)
-        {
-            <tr>
-               @* <td><p>@b.Id</p></td>*@
-                <td><p>@b.FlightNum</p></td>
-                <td><p>@b.Airline</p></td>
-                <td><p>@b.CityArriv</p></td>
-                <td><p>@b.CityDep</p></td>
-                <td><p>@string.Format(" {0:yy/MM/dd HH:mm}", b.DepTime)</p></td>
-                <td><p>@b.Status</p></td>
-                <td><p>@b.Terminal</p></td>
-                <td><p>@b.Gate</p></td>
+                <tr>
 
-            </tr>
-    }
-        </table>
-        <td><p><a href="/Home/Addf/4">Add flight</a></p></td>
+                    @* <td><p>Flight</p></td>*@
+                    <td><p>FlightNum</p></td>
+                    <td><p>Airline</p></td>
+                    <td><p>CityArriv</p></td>
+                    <td><p>CityDep</p></td>
+                    <td><p>DateTime Dep</p></td>
+                    <td><p>Status</p></td>
+                    <td><p>Terminal</p></td>
+                    <td><p>Gate</p></td>
+
+                    <td></td>
+                </tr>
+                @foreach (var b in ViewBag.Flights)
+                {
+                    <tr>
+                        @* <td><p>@b.Id</p></td>*@
+                        <td><p><a href="/Home/Passengers/?FlightNum=@b.FlightNum">@b.FlightNum</a></p></td>
+                        <td><p>@b.Airline</p></td>
+                        <td><p>@b.CityArriv</p></td>
+                        <td><p>@b.CityDep</p></td>
+                        <td><p>@string.Format(" {0:yy/MM/dd HH:mm}", b.DepTime)</p></td>
+                        <td><p>@b.Status</p></td>
+                        <td><p>@b.Terminal</p></td>
+                        <td><p>@b.Gate</p></td>
+
+                    </tr>
+                }
+            </table>
+        <p><a href="/Home/Addf/4">Add flight</a></p>
         <td><p><a href="/Home/Delf">Delete flight</a></p></td>
 
     </div>
+
 </body>
 </html>

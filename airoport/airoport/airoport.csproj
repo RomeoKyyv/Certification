@@ -198,6 +198,7 @@
     <Content Include="Views\Home\Addf.cshtml" />
     <Content Include="Views\Home\Delf.cshtml" />
     <Content Include="Views\Emergency\Emergency.cshtml" />
+    <Content Include="Views\Home\Passengers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

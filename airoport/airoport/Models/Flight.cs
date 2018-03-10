@@ -25,9 +25,24 @@ namespace airoport.Models
         public string Status { set; get; }
         public string Terminal { set; get; }
         public int Gate { set; get; }
-
-
+        public FlighPrice FlighPrice { set; get; }
+        public ICollection<Passenger> Passengers { get; set; }
 
     }
+    public class FlighPrice
+    {
+        public int FlighPriceId { set; get; }
+        public int PriceBis { set; get; }
+        public int PriceEco { set; get; }
+    }
+    public class Passenger
+    {   public int Id { set; get; }
+        
+        public string FirstName { set; get; }
+        public string SecondName { set; get; }
+        public int FlClass { set; get; }
 
+        public int FlightNum { set; get; }
+        public Flight Flight { set; get; }
+    }
 }

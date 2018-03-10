@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Passengers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Passengers</h2>
+
+<div>
+    <h3>Passs Table</h3>
+    
+    <table style="background-color:darkviolet">
+
+        <tr>
+            <td><p>FlightNum</p></td>
+            <td><p>FirstName</p></td>
+            <td><p>SecondName</p></td>
+
+            <td></td>
+        </tr>
+        @foreach (var b in ViewBag.Passengers)
+            {
+            <tr>
+                <td><p>@b.FlightNum </p></td>
+                <td><p>@b.FirstName</p></td>
+                <td><p>@b.SecondName</p></td>
+
+            </tr>
+        }
+    </table>
+

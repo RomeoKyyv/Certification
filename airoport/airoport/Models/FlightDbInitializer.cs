@@ -8,16 +8,23 @@ namespace airoport.Models
 {
     public class FlightDbInitializer: DropCreateDatabaseAlways<FlightContext>
     {
+        
         protected override void Seed(FlightContext db)
         {
             
             {
-                int tmp = 0;
+                string [] Fnames = new string[] { "Anna", "Bill", "Danial", "Ema", "Frederick", "Gregory", "Kray", "Melisa", "Lisa", "Nataly", "Nick" };
+                string[] Snames = { "Prins", "Nuss", "Rabalais", "Kitamura", "Dagenhart", "Gretchen", "Dunkerson", "Juliette", "Haugland", "Wendell" };
+
+                 int tmp = 0;
                 string prt;
                 Random rndobj = new Random();
                 for (int i = 0; i < 10; i++)
                 {
+                    
                     Flight flight = new Flight();
+                    FlighPrice FlPr = new FlighPrice();
+
                     var year = rndobj.Next(2018, 2018);
                     var month = rndobj.Next(1, 13);
                     var days = rndobj.Next(1, DateTime.DaysInMonth(year, month) + 1);
@@ -62,8 +69,28 @@ namespace airoport.Models
                     flight.Gate = tmp;
 
                     db.Flights.Add(flight);
+                    // init FlPrice
+                    tmp = rndobj.Next(100,500);
+                    FlPr.PriceBis = tmp;
+                    tmp = rndobj.Next(70, 300);
+                    FlPr.PriceEco = tmp;
 
+                    db.FlighPrises.Add(FlPr);
 
+                    for (int j = 0; j < 3; j++)
+                    {
+                        Passenger Ps1 = new Passenger();
+                        // init Passengers
+                        Ps1.FlightNum = flight.FlightNum;
+                        tmp = rndobj.Next(11);
+                        Ps1.FirstName = Fnames[tmp];
+                        tmp = rndobj.Next(9);
+
+                        Ps1.SecondName = Snames[tmp];
+                        
+                        db.Passengers.Add(Ps1);
+
+                    }
                 }
             }
 
